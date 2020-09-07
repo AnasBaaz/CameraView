@@ -250,6 +250,7 @@ public class Camera2Engine extends CameraBaseEngine implements
     private void applyRepeatingRequestBuilder(boolean checkStarted, int errorReason) {
         if ((getState() == CameraState.PREVIEW && !isChangingState()) || !checkStarted) {
             try {
+                addRepeatingRequestBuilderSurfaces();
                 mSession.setRepeatingRequest(mRepeatingRequestBuilder.build(),
                         mRepeatingRequestCallback, null);
             } catch (CameraAccessException e) {
