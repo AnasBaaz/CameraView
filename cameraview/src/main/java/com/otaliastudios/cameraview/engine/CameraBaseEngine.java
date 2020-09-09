@@ -945,7 +945,7 @@ public abstract class CameraBaseEngine extends CameraEngine {
     @NonNull
     @SuppressWarnings("WeakerAccess")
     protected final Size computeFrameProcessingSize() {
-        return computePreviewStreamSize();
+        return new Size(mFrameProcessingMaxWidth, mFrameProcessingMaxHeight);
     }
 
     //endregion
